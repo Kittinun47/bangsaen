@@ -1,29 +1,23 @@
 document.addEventListener("DOMContentLoaded", async function () {
     
-    // ฟังก์ชันช่วยดึงไฟล์ HTML ย่อยมาใส่ในแท็กที่กำหนด
+    // ฟังก์ชันช่วยดึงคอมเพนเนนต์ Navbar และ Footer มาแสดงผลอัตโนมัติทุกหน้า
     async function loadComponent(placeholderId, filePath) {
         try {
             const response = await fetch(filePath);
             if (response.ok) {
                 const html = await response.text();
                 document.getElementById(placeholderId).innerHTML = html;
-            } else {
-                console.error(`ไม่สามารถโหลดไฟล์ ${filePath} ได้`);
             }
         } catch (error) {
-            console.error("เกิดข้อผิดพลาดในการโหลด:", error);
+            console.error("Error loading component:", error);
         }
     }
 
-    // ทำการโหลดชิ้นส่วนทั้งหมดเข้ามาประกอบกัน
+    // เรียกใช้งานโหลด Navbar และ Footer (รองรับข้อกำหนดข้อ 7 เรื่อง Navbar ทำงานได้ทุกหน้า)
     await loadComponent("navbar-placeholder", "components/navbar.html");
-    await loadComponent("carousel-placeholder", "components/carousel.html");
-    await loadComponent("attractions-placeholder", "components/attractions.html");
-    await loadComponent("contact-placeholder", "components/contact.html");
-    await loadComponent("modal-placeholder", "components/modal.html");
     await loadComponent("footer-placeholder", "components/footer.html");
 
-    // หลังจากโหลดส่วนติดต่อเสร็จแล้ว ค่อยผูกฟังก์ชันกดส่งฟอร์ม (Event Listener)
+    // ระบบจัดการฟอร์มติดต่อ (หน้า Contact)
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
         contactForm.addEventListener("submit", function (event) {

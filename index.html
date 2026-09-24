@@ -3,39 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แนะนำสถานที่ท่องเที่ยวบางแสน</title>
-    
-    <!-- Bootstrap 5 CSS CDN -->
+    <title>หน้าแรก - แนะนำสถานที่ท่องเที่ยวบางแสน</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-    <!-- 1. Navbar จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
+    <!-- Navbar (โหลดอัตโนมัติ) -->
     <div id="navbar-placeholder"></div>
 
-    <!-- 2. Carousel จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
-    <div id="carousel-placeholder"></div>
+    <!-- Hero Section & Carousel -->
+    <header class="mt-5 pt-4">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" class="d-block w-100 carousel-img" alt="หาดบางแสน">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h2>ยินดีต้อนรับสู่หาดบางแสน</h2>
+                        <p>สถานที่พักผ่อนหย่อนใจยอดฮิต ใกล้กรุงเทพฯ</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80" class="d-block w-100 carousel-img" alt="บรรยากาศทะเล">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h2>ดื่มด่ำบรรยากาศริมทะเล</h2>
+                        <p>สัมผัสลมทะเลและอาหารทะเลสดใหม่ทุกวัน</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+        </div>
+    </header>
 
-    <!-- 3. Attractions (Card) จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
-    <div id="attractions-placeholder"></div>
+    <!-- Welcome / Intro Section -->
+    <section class="container py-5 text-center">
+        <span class="badge bg-primary mb-2 px-3 py-2 fs-6">Official Guide</span>
+        <h1 class="fw-bold mb-3">เว็บไซต์แนะนำการท่องเที่ยวบางแสน</h1>
+        <p class="text-muted mx-auto w-75">เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมข้อมูลสถานที่ท่องเที่ยว คาเฟ่ และจุดเช็คอินที่น่าสนใจในเขตบางแสน ชลบุรี เพื่ออำนวยความสะดวกให้กับนักท่องเที่ยวทุกท่าน</p>
+        <a href="services.html" class="btn btn-warning btn-lg mt-3 shadow-sm">ดูสถานที่ท่องเที่ยวทั้งหมด</a>
+    </section>
 
-    <!-- 4. Contact Form จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
-    <div id="contact-placeholder"></div>
+    <!-- Cards สำคัญ 3 Cards -->
+    <section class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">หาดทรายยาว</h5>
+                        <p class="card-text text-muted">ชายหาดยอดฮิต เหมาะแก่การเดินเล่นพักผ่อนและทำกิจกรรมริมทะเล</p>
+                        <a href="services.html" class="btn btn-outline-primary btn-sm">อ่านเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">จุดชมวิวเขาสามมุข</h5>
+                        <p class="card-text text-muted">ชมวิวทะเลมุมสูงและสัมผัสลมเย็นๆ พร้อมคาเฟ่สไตล์ชิลๆ มากมาย</p>
+                        <a href="services.html" class="btn btn-outline-primary btn-sm">อ่านเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">โลกใต้ทะเลบางแสน</h5>
+                        <p class="card-text text-muted">สถาบันวิทยาศาสตร์ทางทะเลแหล่งเรียนรู้ตื่นตาตื่นใจกับแมงกะพรุนเรืองแสง</p>
+                        <a href="services.html" class="btn btn-outline-primary btn-sm">อ่านเพิ่มเติม</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- 5. Modal จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
-    <div id="modal-placeholder"></div>
-
-    <!-- 6. Footer จะถูกโหลดเข้ามาใส่ในนี้อัตโนมัติ -->
+    <!-- Footer (โหลดอัตโนมัติ) -->
     <div id="footer-placeholder"></div>
 
-
-    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS (จัดการโหลดไฟล์ย่อย และระบบฟอร์ม) -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
